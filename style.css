@@ -1,71 +1,68 @@
-:root{
-  --primary: #1f6f95;
-  --accent:  #7fb4d7;
-  --bg:      #f7fbff;
-  --card:    #ffffff;
-  --muted:   #666;
-  --max:     1000px;
+/* Custom color maps for custom classes */
+:root {
+    --accentViolet: #8b5cf6;
+    --accentVioletHover: #a78bfa;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family: "Lato", Arial, sans-serif;
-  background: linear-gradient(180deg,var(--bg),#ffffff);
-  color:#222;
-  padding:24px;
-  display:flex;
-  justify-content:center;
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0b0f19;
 }
 
-.wrap{
-  width:100%;
-  max-width:var(--max);
-  background:var(--card);
-  border-radius:12px;
-  box-shadow:0 10px 30px rgba(25,40,60,0.08);
-  overflow:hidden;
-  display:grid;
-  grid-template-columns:320px 1fr;
+/* Custom Skill Tags */
+.skill-tag {
+    background-color: #131b2e;
+    border: 1px solid #1e293b;
+    color: #cbd5e1;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    font-weight: 500;
 }
 
-.left {
-  background:linear-gradient(180deg, rgba(31,111,149,0.06), rgba(127,180,215,0.02));
-  padding:40px 28px;
-  border-right:3px solid rgba(31,111,149,0.06);
+/* Gentle floating animation for the Hero badge */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
 }
 
-.avatar-wrap{display:flex;justify-content:center;margin-bottom:22px;}
-.avatar{width:150px;height:150px;border-radius:50%;overflow:hidden;border:8px solid #eaf6fb;box-shadow:0 6px 18px rgba(31,111,149,0.12);}
-.avatar img{width:100%;height:100%;object-fit:cover;}
+.float-element {
+    animation: float 4s ease-in-out infinite;
+}
 
-.left h3{text-align:center;margin-bottom:18px;color:var(--primary);font-size:22px;font-weight:700;}
-.small-title{font-weight:700;color:var(--primary);margin-bottom:8px}
-.contact-list{display:flex;flex-direction:column;gap:14px}
-.contact-item{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:14px;}
-.icon{width:36px;height:36px;border-radius:8px;display:inline-grid;place-items:center;background:#f0f7fb;color:var(--primary);}
+/* Social icons layout and animations */
+.social-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 9999px;
+    background-color: #1e293b;
+    border: 1px solid #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    transition: all 0.3s ease;
+}
 
-.right{padding:36px 46px;}
-.top{border-bottom:6px solid rgba(31,111,149,0.06);padding-bottom:18px;margin-bottom:18px;}
-.name{display:flex;flex-direction:column;gap:6px;}
-.name h1{font-size:34px;color:var(--primary);font-weight:900;}
-.title{color:#444;font-weight:600;font-size:16px;}
-.meta-sep{height:4px;background:linear-gradient(90deg,var(--primary), var(--accent));width:70%;margin:12px 0;border-radius:4px;opacity:0.15;}
+.social-icon:hover {
+    color: var(--accentViolet);
+    border-color: var(--accentViolet);
+    transform: translateY(-0.25rem);
+}
 
-.summary{font-size:16px;color:#333;line-height:1.8;text-align:justify;margin-bottom:24px;}
-.side-row{display:flex;gap:28px;flex-wrap:wrap;}
+/* Contact form custom elements */
+.form-input {
+    width: 100%;
+    background-color: #131b2e;
+    border: 1px solid #1e293b;
+    color: #e2e8f0;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
 
-.box{background:#fff;padding:18px;border-radius:8px;box-shadow:0 6px 20px rgba(20,40,60,0.03);flex:1;}
-.box h4{color:var(--primary);margin-bottom:10px;font-size:15px}
-.skills-list{display:flex;flex-direction:column;gap:12px}
-.skill{font-size:14px;color:#333;}
-.progress{height:8px;background:#e6eef6;border-radius:8px;overflow:hidden;margin-top:6px;}
-.progress > span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));}
-
-.projects ul{list-style:none;padding-left:0;}
-.projects li{margin-bottom:8px;}
-
-@media (max-width:900px){
-  .wrap{grid-template-columns:1fr;}
-  .left{border-right:none;border-top:1px solid rgba(31,111,149,0.04)}
-  .right{padding:22px}
+.form-input:focus {
+    border-color: var(--accentViolet);
 }
